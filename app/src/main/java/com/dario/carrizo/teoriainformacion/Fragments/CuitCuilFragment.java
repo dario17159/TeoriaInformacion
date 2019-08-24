@@ -13,13 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.airbnb.lottie.LottieAnimationView;
 import com.dario.carrizo.teoriainformacion.R;
 import com.google.android.material.textfield.TextInputEditText;
 
-import java.util.ArrayList;
 
 
 /**
@@ -50,7 +48,6 @@ public class CuitCuilFragment extends Fragment {
         btnValidar = rootView.findViewById(R.id.btnValidarCuitCuil);
         success = rootView.findViewById(R.id.success);
         fail = rootView.findViewById(R.id.fail);
-
         arreglo = new int[11];
         btnValidar.setEnabled(false);
         tiCuilCuit.addTextChangedListener(new TextWatcher() {
@@ -71,6 +68,7 @@ public class CuitCuilFragment extends Fragment {
                 }else if (cantidad > charSequence.toString().trim().length()){
                     cantidad--;
                 }
+                // hasta que la cantidad de caracteres no cohincida con el tamaño que debe tomar no se habilita el boton
                 if(charSequence.toString().trim().length() == 11){
                     btnValidar.setEnabled(true);
                 }else{
@@ -83,6 +81,7 @@ public class CuitCuilFragment extends Fragment {
 
             }
         });
+        // Manipulamos el evento click, realizamos la validacion y hacemos visible la animacion correspondiente
         btnValidar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -105,12 +104,21 @@ public class CuitCuilFragment extends Fragment {
         return rootView;
     }
 
+    /**
+     * Permite realizar la validacion correspondiente y nos devuelve true o false
+     *  la validacion se realiza a traves de multiplicar y sumar cada uno de los digitos del
+     *  CUIL omitiendo el digito verificador (el ultimo), luego a la suma la dividimos por 11 que
+     *  es el total de digitos, obtenemos de la division el resto el cual luego se le resta a 11
+     *  de donde obtenemos el digito verificador el cual debe cohincidir con el ingresado en el CUIL
+     *  hay dos casos excepcionales que no hace necesaria la resta de 11 por el resto de la division
+     * */
     private boolean validar(int[] arreglo) {
         int acumulador = 0, resultado,resto;
         for(int i=0;i<multiplicadores.length;i++){
             acumulador+=arreglo[i]*multiplicadores[i];
         }
         resto = (acumulador%arreglo.length);
+        // hay casos excepcionales para los cuales se deben tener en cuenta
         if(resto == 0){
             resultado = 0;
         } else if(resto == 1){
