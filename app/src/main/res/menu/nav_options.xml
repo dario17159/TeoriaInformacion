@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/menu_wav"
+            android:icon="@drawable/ic_wav"
+            android:title="@string/wav"/>
+        <item android:id="@+id/menu_bmp"
+            android:icon="@drawable/ic_bmp"
+            android:title="@string/decode_bmp"/>
+        <item
+            android:id="@+id/menu_entropia_redundancia"
+            android:icon="@drawable/ic_formula"
+            android:title="@string/entrop_a_y_redundancia" />
+        <item android:icon="@drawable/ic_transmission"
+            android:id="@+id/menu_transmission"
+            android:title="@string/ej_4_canales_de_transmisi_n"/>
+        <item android:id="@+id/menu_compare"
+            android:icon="@drawable/ic_compare"
+            android:title="@string/ej_7_comparar_cadenas"/>
+        <item android:id="@+id/menu_cuil_cuit"
+            android:title="@string/ej_8_validar_cuit_cuil"
+            android:icon="@drawable/ic_cuit_cuil"/>
+    </group>
+</menu>

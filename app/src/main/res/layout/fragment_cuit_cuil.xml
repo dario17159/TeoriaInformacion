@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.CuitCuilFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiCuilCuitLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="32dp"
+            android:hint="CUIT/CUIL"
+            app:counterEnabled="true"
+            app:counterMaxLength="11"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/tiCuilCuit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:maxLength="11"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnValidarCuitCuil"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/validar_cuit_cuil"
+            android:background="@drawable/bg_btn"
+            android:textColor="@color/md_white_1000"
+            app:layout_constraintEnd_toEndOf="@+id/tiCuilCuitLayout"
+            app:layout_constraintStart_toStartOf="@+id/tiCuilCuitLayout"
+            app:layout_constraintTop_toBottomOf="@+id/tiCuilCuitLayout" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/success"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintTop_toBottomOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintVertical_bias="0.0"
+            app:lottie_fileName="success.json"
+            app:lottie_imageAssetsFolder="assets"
+            app:lottie_loop="false" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/fail"
+            android:visibility="gone"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintTop_toBottomOf="@+id/btnValidarCuitCuil"
+            app:layout_constraintVertical_bias="0.0"
+            app:lottie_fileName="fail.json"
+            app:lottie_imageAssetsFolder="assets"
+            app:lottie_loop="false" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

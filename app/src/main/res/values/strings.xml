@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">TeoriaInformacion</string>
+    <string name="teor_a_de_la_informaci_n">Teoría de la Información</string>
+    <string name="wav">Ej) 1 - .WAV</string>
+    <string name="decode_bmp">EJ) 2 - .BMP</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="empty_directory">Empty Directory</string>
+    <string name="storage_removed">Storage was removed or unmounted.</string>
+    <string name="choose_file">Select a file</string>
+    <string name="error_selecting_file">Error selecting File</string>
+    <string name="internal_storage">Internal storage</string>
+    <string name="seleccionar_archivo">Seleccionar Archivo</string>
+    <string name="respuesta">Respuesta:</string>
+    <string name="id">ID:</string>
+    <string name="tama_o_del_archivo">Tamaño del Archivo:</string>
+    <string name="formato">Formato:</string>
+    <string name="id_subchunk">ID subchunk:</string>
+    <string name="tama_o_subchunk">Tamaño Subchunk:</string>
+    <string name="pcm">PCM:</string>
+    <string name="numero_de_canales">Numero de Canales</string>
+    <string name="tama_o_subchunk2">Tamaño Subchunk2:</string>
+    <string name="id_subchunk2">ID Subchunk2:</string>
+    <string name="bits_per_sample">Bits per Sample:</string>
+    <string name="blockalign">Blockalign:</string>
+    <string name="byterate">Byterate:</string>
+    <string name="samplerate">Samplerate:</string>
+    <string name="por_favor_seleccione_un_archivo_para_obtener_una_respuesta">Por favor seleccione un archivo para obtener una respuesta</string>
+    <string name="entrop_a_y_redundancia">Ej) 3 - EyR</string>
+    <string name="archivo_zip">.ZIP</string>
+    <string name="archivo_rtf">.RTF</string>
+    <string name="archivo_odt">.ODT</string>
+    <string name="archivo_docx">.DOCX</string>
+    <string name="archivo_txt">.TXT</string>
+    <string name="ej_4_canales_de_transmisi_n">Ej) 4 - Canales de Transmisión</string>
+    <string name="ej_7_comparar_cadenas">Ej) 7 - Comparar Cadenas</string>
+    <string name="primer_cadena">Primer Cadena</string>
+    <string name="segunda_cadena">Segunda Cadena</string>
+    <string name="ej_8_validar_cuit_cuil">Ej) 8 - Validar CUIT/CUIL</string>
+    <string name="validar_cuit_cuil">Validar CUIT/CUIL</string>
+</resources>
