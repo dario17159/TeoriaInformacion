@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.dario.carrizo.teoriainformacion.Fragments.BMPFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.CadenasSimilaresFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.CanalesFragment;
+import com.dario.carrizo.teoriainformacion.Fragments.ClientFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.CuitCuilFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.EntropiaRedundanciaFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.WavFragment;
@@ -78,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new CuitCuilFragment();
                         fragmentTransaction=true;
                         break;
+                    case R.id.menu_server:
+                        fragment = new ClientFragment();
+                        fragmentTransaction = true;
                 }
 
                 if(fragmentTransaction){

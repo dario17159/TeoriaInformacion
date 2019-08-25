@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.ClientFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ipLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:hint="@string/xxx_xxx_xxx_xxx"
+            app:helperText="Ingrese la ip de la pc host"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etIp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/cadenaLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="@string/cadena_a_enviar_al_servidor"
+            app:helperText="Debe contener los caracteres (A,B,C,D,E,F,G,H)"
+            app:helperTextEnabled="true"
+            app:layout_constraintEnd_toEndOf="@+id/ipLayout"
+            app:layout_constraintStart_toStartOf="@+id/ipLayout"
+            app:layout_constraintTop_toBottomOf="@+id/ipLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCadena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnConectar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_btn"
+            android:text="@string/conectar"
+            android:textColor="@color/md_white_1000"
+            app:layout_constraintEnd_toEndOf="@+id/cadenaLayout"
+            app:layout_constraintStart_toStartOf="@+id/cadenaLayout"
+            app:layout_constraintTop_toBottomOf="@+id/cadenaLayout" />
+
+        <TextView
+            android:id="@+id/tvResponseServer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="TextView"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@+id/btnConectar"
+            app:layout_constraintStart_toStartOf="@+id/btnConectar"
+            app:layout_constraintTop_toBottomOf="@+id/btnConectar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

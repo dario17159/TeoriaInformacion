@@ -21,5 +21,8 @@
         <item android:id="@+id/menu_cuil_cuit"
             android:title="@string/ej_8_validar_cuit_cuil"
             android:icon="@drawable/ic_cuit_cuil"/>
+        <item android:id="@+id/menu_server"
+            android:title="@string/cliente_servidor"
+            android:icon="@drawable/ic_server"/>
     </group>
 </menu>

@@ -41,4 +41,9 @@
     <string name="segunda_cadena">Segunda Cadena</string>
     <string name="ej_8_validar_cuit_cuil">Ej) 8 - Validar CUIT/CUIL</string>
     <string name="validar_cuit_cuil">Validar CUIT/CUIL</string>
+    <string name="xxx_xxx_xxx_xxx">XXX.XXX.XXX.XXX</string>
+    <string name="xxx">XXX</string>
+    <string name="cliente_servidor">Ej) 9 - Cliente-Servidor</string>
+    <string name="conectar">Conectar</string>
+    <string name="cadena_a_enviar_al_servidor">Cadena a enviar al servidor</string>
 </resources>
