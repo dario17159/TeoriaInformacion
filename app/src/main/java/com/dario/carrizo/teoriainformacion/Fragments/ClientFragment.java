@@ -70,7 +70,7 @@ public class ClientFragment extends Fragment {
                 if(!ADDRESS.isEmpty()){
                     if(!etCadena.getText().toString().isEmpty()) {
                         MyATaskCliente myATaskYW = new MyATaskCliente();
-                        myATaskYW.execute(etCadena.getText().toString().trim().toUpperCase());
+                        myATaskYW.execute(comprimirCadena(etCadena.getText().toString().trim().toUpperCase()));
                     } else{
                         etCadena.setError("Debe ingresar la cadena a codificar");
                         etCadena.requestFocus();
@@ -84,6 +84,33 @@ public class ClientFragment extends Fragment {
         });
 
         return rootView;
+    }
+
+    private String comprimirCadena(String input) {
+        int count = 1;
+        char last = input.charAt(0);
+
+        StringBuilder output = new StringBuilder();
+
+        for(int i = 1; i < input.length(); i++){
+            if(input.charAt(i) == last){
+                count++;
+            }else{
+                if(count > 1){
+                    output.append(""+count+last);
+                }else{
+                    output.append(last);
+                }
+                count = 1;
+                last = input.charAt(i);
+            }
+        }
+        if(count > 1){
+            output.append(""+count+last);
+        }else{
+            output.append(last);
+        }
+        return output.toString();
     }
 
     private void liknVariables(View rootView) {
@@ -169,5 +196,7 @@ public class ClientFragment extends Fragment {
             //editText2.setText(value);
         }
     }
+
+
 
 }
