@@ -22,6 +22,7 @@ import static android.view.View.GONE;
 import static android.view.View.VISIBLE;
 
 /**
+ * Esta clase muestraa la capacidad del canal
  * A simple {@link Fragment} subclass.
  */
 public class CanalesFragment extends Fragment {
@@ -130,7 +131,7 @@ public class CanalesFragment extends Fragment {
         double mpa2 = 0.0;
         double mpa3 = 0.0;
         double mpa4 = 0.0;
-        //Informacion
+        //Informacion mutua
         double Iab = 0.0;
         // Probabilidades
         double pa1 = 0.0;
@@ -144,7 +145,7 @@ public class CanalesFragment extends Fragment {
         double aux4 = 0.0;
         // Capacidad maxima del canal
         double max = 0.0;
-        // Canales
+        // Canales seteados
         final double b1a1 = 0.25;
         final double b2a1 = 0.25;
         final double b3a1 = 0.25;
@@ -161,20 +162,28 @@ public class CanalesFragment extends Fragment {
         final double b2a4 = 0.25;
         final double b3a4 = 0.375;
         final double b4a4 = 0.25;
+
+        //empieza a calcular la capacidad maxima
         while (pa1 <= 1.0) {
             for (aux2 = 0.0, pa2 = 0.0; pa2 < 1.0 && pa1 + pa2 <= 1.0; pa2 = Math.round(aux2 * 100.0) / 100.0) {
                 for (aux3 = 0.0, pa3 = 0.0; pa3 <= 1.0 && pa1 + pa2 + pa3 <= 1.0; pa3 = Math.round(aux3 * 100.0) / 100.0) {
                     for (aux4 = 0.0, pa4 = 0.0; pa4 <= 1.0 && pa1 + pa2 + pa3 + pa4 == 1.0; pa4 = Math.round(aux4 * 100.0) / 100.0) {
+                        //calcula las parciales
                         final double psb1 = pa1 * b1a1 + pa2 * b1a2 + pa3 * b1a3 + pa4 * b1a4;
                         final double psb2 = pa1 * b2a1 + pa2 * b2a2 + pa3 * b2a3 + pa4 * b2a4;
                         final double psb3 = pa1 * b3a1 + pa2 * b3a2 + pa3 * b3a3 + pa4 * b3a4;
                         final double psb4 = pa1 * b4a1 + pa2 * b4a2 + pa3 * b4a3 + pa4 * b4a4;
+                        //entropia del receptor
                         final double HB = psb1 * (Math.log(1.0 / psb1) / Math.log(2.0)) + psb2 * (Math.log(1.0 / psb2) / Math.log(2.0)) + psb3 * (Math.log(1.0 / psb3) / Math.log(2.0)) + psb4 * (Math.log(1.0 / psb4) / Math.log(2.0));
+                        //calcula la equivocacion
                         final double Hba = pa1 * (b1a1 * (Math.log(1.0 / b1a1) / Math.log(2.0)) + b2a1 * (Math.log(1.0 / b2a1) / Math.log(2.0)) + b3a1 * (Math.log(1.0 / b3a1) / Math.log(2.0))) + pa2 * (b1a2 * (Math.log(1.0 / b1a2) / Math.log(2.0)) + b2a2 * (Math.log(1.0 / b2a2) / Math.log(2.0)) + b3a2 * (Math.log(1.0 / b3a2) / Math.log(2.0))) + pa3 * (b1a3 * (Math.log(1.0 / b1a3) / Math.log(2.0)) + b2a3 * (Math.log(1.0 / b2a3) / Math.log(2.0)) + b3a3 * (Math.log(1.0 / b3a3) / Math.log(2.0))) + pa4 * (b1a4 * (Math.log(1.0 / b1a4) / Math.log(2.0)) + b2a4 * (Math.log(1.0 / b2a4) / Math.log(2.0)) + b3a4 * (Math.log(1.0 / b3a4) / Math.log(2.0)));
+                        //obtengo informacion mutua
                         Iab = HB - Hba;
-                        if (Iab < -0.05) {
+
+                        /*if (Iab < -0.05) {
                             System.out.println(" ");
-                        }
+                        }*/
+                        //saco los maximos
                         if (Iab > max) {
                             max = Iab;
                             mpa1 = pa1;
@@ -182,6 +191,7 @@ public class CanalesFragment extends Fragment {
                             mpa3 = pa3;
                             mpa4 = pa4;
                         }
+                        //voy subiendo de a poco las capacidades hasta llegar a la maxima
                         aux4 += 0.01;
                     }
                     aux3 += 0.01;
@@ -189,9 +199,11 @@ public class CanalesFragment extends Fragment {
                 aux2 += 0.01;
             }
             aux1 += 0.01;
+            //prob de a1
             pa1 = Math.round(aux1 * 100.0) / 100.0;
         }
 
+        //para poner visible el texto de An en la interfaz
         tvA1.setVisibility(VISIBLE);
         tvA2.setVisibility(VISIBLE);
         tvA3.setVisibility(VISIBLE);
@@ -204,6 +216,11 @@ public class CanalesFragment extends Fragment {
         tvA4.setText("Probabilidad para la fuente A4: \n" + mpa4);
         tvInfo.setText("Información obtenida de las probabilidades: \n" + max);
     }
+
+    /*
+    * -----------------------------------------------------------------
+    * De aqui en mas es lo mismo que lo anterior pero para canales con menos entradas
+    * */
 
     @SuppressLint("SetTextI18n")
     private void calcularCapacidad3() {
@@ -267,6 +284,8 @@ public class CanalesFragment extends Fragment {
         tvInfo.setText("Información obtenida de las probabilidades: \n" + max);
     }
 
+
+    //Calcula la capacidad para el canal binario
     @SuppressLint("SetTextI18n")
     private void calcularCapacidad2() {
         //Maximo de probabilidades p(a1), p(a2)
@@ -275,7 +294,7 @@ public class CanalesFragment extends Fragment {
         //Entropia Maxima
         double maxHb = 0.0;
         double maxHba = 0.0;
-        // Informacion
+        // Informacion mutua
         double Iab = 0.0;
         // Probabilidades
         double pa1 = 0.0;
@@ -292,8 +311,10 @@ public class CanalesFragment extends Fragment {
         final double[] log3 = new double[2];
 
         while (pa1 <= 1.0) {
+            //saco las probabilidades de salida
             final double psb1 = pa1 * b1a1 + pa2 * b1a2;
             final double psb2 = pa1 * b2a1 + pa2 * b2a2;
+
             if (psb1 != 0.0) {
                 log3[0] = Math.log(1.0 / psb1) / Math.log(2.0);
             } else {
@@ -304,6 +325,7 @@ public class CanalesFragment extends Fragment {
             } else {
                 log3[1] = 0.0;
             }
+            //calcula la entropia de B
             final double HB = psb1 * log3[0] + psb2 * log3[1];
             if (b1a1 != 0.0) {
                 log2[0] = Math.log(1.0 / b1a1) / Math.log(2.0);
