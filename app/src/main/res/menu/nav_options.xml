@@ -15,6 +15,9 @@
         <item android:icon="@drawable/ic_transmission"
             android:id="@+id/menu_transmission"
             android:title="@string/ej_4_canales_de_transmisi_n"/>
+        <item android:id="@+id/menu_fijo_variable"
+            android:icon="@drawable/ic_folder"
+            android:title="@string/ej_5_archivos_fijos_variables"/>
         <item android:id="@+id/menu_compare"
             android:icon="@drawable/ic_compare"
             android:title="@string/ej_7_comparar_cadenas"/>

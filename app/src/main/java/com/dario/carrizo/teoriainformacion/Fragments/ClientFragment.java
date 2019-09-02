@@ -153,33 +153,25 @@ public class ClientFragment extends Fragment {
             try {
                 //Se conecta al servidor
                 InetAddress serverAddr = InetAddress.getByName(ADDRESS);
-                Log.i("I/TCP Client", "Connecting...");
                 Socket socket = new Socket(serverAddr, SERVERPORT);
-                Log.i("I/TCP Client", "Connected to server");
-
                 //envia peticion de cliente
-                Log.i("I/TCP Client", "Send data to server");
                 PrintStream output = new PrintStream(socket.getOutputStream());
                 String request = values[0]; //almacena en request la cadena que obtiene del etCadena
                 output.println(request);
-
                 //recibe respuesta del servidor y formatea a String
-                Log.i("I/TCP Client", "Received data to server");
                 InputStream stream = socket.getInputStream();
                 byte[] lenBytes = new byte[256];
                 stream.read(lenBytes, 0, 256);
                 String received = new String(lenBytes, "UTF-8").trim();
-                Log.i("I/TCP Client", "Received " + received);
-                Log.i("I/TCP Client", "");
                 //cierra conexion
                 socket.close();
                 return received;
             } catch (UnknownHostException ex) {
-                Log.e("E/TCP Client", "" + ex.getMessage());
+
   //              Toast.makeText(getActivity(), "No se puede conectar al host "+ADDRESS, Toast.LENGTH_SHORT).show();
                 return ex.getMessage();
             } catch (IOException ex) {
-                Log.e("E/TCP Client", "" + ex.getMessage());
+
 //                Toast.makeText(getActivity(), "Ocurrio un error inesperado, Vuelva a intentarlo", Toast.LENGTH_SHORT).show();
                 return ex.getMessage();
             }
@@ -192,7 +184,7 @@ public class ClientFragment extends Fragment {
         protected void onPostExecute(String value) {
             progressDialog.dismiss();
             tvResponseServer.setVisibility(View.VISIBLE);
-            tvResponseServer.setText(value);
+            tvResponseServer.setText("La cadena se envio con exito, para ver el resultado de la operacion visualice la salida en el IDE donde esta ejecuntando el servidor.");
             //editText2.setText(value);
         }
     }

@@ -1,14 +1,433 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Fragments.VariableFijoFragment">
 
-
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:fillViewport="true">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <RadioGroup
+                android:id="@+id/radio_group2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvEstudiosPrimarios"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvEstudiosPrimarios">
+
+                <RadioButton
+                    android:id="@+id/rbtnPrimariosSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnPrimariosNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvEstudiosSecundarios"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvEstudiosSecundarios">
+
+                <RadioButton
+                    android:id="@+id/rbtnSecundariosSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnSecundariosNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvEstudiosuniversitarios"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvEstudiosuniversitarios">
+
+                <RadioButton
+                    android:id="@+id/rbtnUniversitariosSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnUniversitariosNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group5"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvViviendaPropia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvViviendaPropia">
+
+                <RadioButton
+                    android:id="@+id/rbtnViviendaSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnViviendaNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group6"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvObraSocial"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvObraSocial">
+
+                <RadioButton
+                    android:id="@+id/rbtnObraSocialSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnObraSocialNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group7"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvTrabaja"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvTrabaja">
+
+                <RadioButton
+                    android:id="@+id/rbtnTrabajaSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnTrabajaNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group8"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvVoluntariado"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvVoluntariado">
+
+                <RadioButton
+                    android:id="@+id/rbtnVoluntariadoSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnVoluntariadoNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/radio_group9"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/tvHijos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvHijos">
+
+                <RadioButton
+                    android:id="@+id/rbtnHijosSi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:text="@string/si" />
+
+                <RadioButton
+                    android:id="@+id/rbtnHijosNo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/no" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/tvSeleccionarArchivo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/generar_archivo"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvEstudiosPrimarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/_1_estudios_primarios"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/elyDNI" />
+
+            <TextView
+                android:id="@+id/tvEstudiosSecundarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_2_estudios_secundarios"
+                app:layout_constraintStart_toStartOf="@+id/tvEstudiosPrimarios"
+                app:layout_constraintTop_toBottomOf="@+id/tvEstudiosPrimarios" />
+
+            <TextView
+                android:id="@+id/tvEstudiosuniversitarios"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_3_estudios_universitarios"
+                app:layout_constraintStart_toStartOf="@+id/tvEstudiosSecundarios"
+                app:layout_constraintTop_toBottomOf="@+id/tvEstudiosSecundarios" />
+
+            <TextView
+                android:id="@+id/tvViviendaPropia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_4_vivienda_propia"
+                app:layout_constraintStart_toStartOf="@+id/tvEstudiosuniversitarios"
+                app:layout_constraintTop_toBottomOf="@+id/tvEstudiosuniversitarios" />
+
+            <TextView
+                android:id="@+id/tvObraSocial"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_5_obra_social"
+                app:layout_constraintStart_toStartOf="@+id/tvViviendaPropia"
+                app:layout_constraintTop_toBottomOf="@+id/tvViviendaPropia" />
+
+            <TextView
+                android:id="@+id/tvTrabaja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_6_trabaja"
+                app:layout_constraintStart_toStartOf="@+id/tvObraSocial"
+                app:layout_constraintTop_toBottomOf="@+id/tvObraSocial" />
+
+            <TextView
+                android:id="@+id/tvVoluntariado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_7_participa_en_voluntariado"
+                app:layout_constraintStart_toStartOf="@+id/tvTrabaja"
+                app:layout_constraintTop_toBottomOf="@+id/tvTrabaja" />
+
+            <TextView
+                android:id="@+id/tvHijos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/_8_hijos"
+                app:layout_constraintStart_toStartOf="@+id/tvVoluntariado"
+                app:layout_constraintTop_toBottomOf="@+id/tvVoluntariado" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/elyNombreApellido"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:hint="@string/nombre_y_apellido"
+                app:layout_constraintStart_toStartOf="@+id/tvSeleccionarArchivo"
+                app:layout_constraintTop_toBottomOf="@+id/tvSeleccionarArchivo">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNombreApellido"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/elyDireccion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/direccion"
+                app:layout_constraintEnd_toEndOf="@+id/elyNombreApellido"
+                app:layout_constraintStart_toStartOf="@+id/elyNombreApellido"
+                app:layout_constraintTop_toBottomOf="@+id/elyNombreApellido">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/elyDNI"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="@string/dni"
+                app:layout_constraintEnd_toEndOf="@+id/elyDireccion"
+                app:layout_constraintStart_toStartOf="@+id/elyDireccion"
+                app:layout_constraintTop_toBottomOf="@+id/elyDireccion">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etDNI"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:maxLength="8" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="@+id/radio_group9"
+                app:layout_constraintStart_toStartOf="@+id/tvHijos"
+                app:layout_constraintTop_toBottomOf="@+id/radio_group9">
+
+                <Button
+                    android:id="@+id/btnGuardar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:text="@string/guardar"
+                    android:textColor="@color/md_white_1000" />
+
+                <Button
+                    android:id="@+id/btnGenerar20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:text="@string/_20_registros"
+                    android:textColor="@color/md_white_1000" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <Button
+                    android:id="@+id/btnVerVariables"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:text="@string/ver_variable"
+                    android:textColor="@color/md_white_1000" />
+
+                <Button
+                    android:id="@+id/btnVerFijos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_btn"
+                    android:text="@string/ver_fijo"
+                    android:textColor="@color/md_white_1000" />
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

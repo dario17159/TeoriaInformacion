@@ -18,6 +18,7 @@ import com.dario.carrizo.teoriainformacion.Fragments.CanalesFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.ClientFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.CuitCuilFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.EntropiaRedundanciaFragment;
+import com.dario.carrizo.teoriainformacion.Fragments.VariableFijoFragment;
 import com.dario.carrizo.teoriainformacion.Fragments.WavFragment;
 import com.dario.carrizo.teoriainformacion.R;
 import com.google.android.material.navigation.NavigationView;
@@ -82,7 +83,13 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.menu_server:
                         fragment = new ClientFragment();
                         fragmentTransaction = true;
+                        break;
+                    case R.id.menu_fijo_variable:
+                        fragment = new VariableFijoFragment();
+                        fragmentTransaction = true;
+                        break;
                 }
+
 
                 if(fragmentTransaction){
                     getSupportFragmentManager()
